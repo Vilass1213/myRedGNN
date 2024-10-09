@@ -16,8 +16,9 @@ def cal_ranks(scores, labels, filters):
 def cal_performance(ranks):
     mrr = (1. / ranks).sum() / len(ranks)
     h_1 = sum(ranks<=1) * 1.0 / len(ranks)
+    h_3 = sum(ranks<=3) * 1.0 / len(ranks)
     h_10 = sum(ranks<=10) * 1.0 / len(ranks)
-    return mrr, h_1, h_10
+    return mrr, h_1, h_3, h_10
 
 
 def select_gpu():

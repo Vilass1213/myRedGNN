@@ -5,8 +5,9 @@ import numpy as np
 from collections import defaultdict
 
 class DataLoader:
-    def __init__(self, task_dir):
+    def __init__(self, task_dir, embedding_file=None):
         self.task_dir = task_dir
+        self.entity_embeddings = None  # Store pre-trained embeddings
 
         with open(os.path.join(task_dir, 'entities.txt')) as f:
             self.entity2id = dict()
@@ -23,9 +24,14 @@ class DataLoader:
                 relation = line.strip()
                 self.relation2id[relation] = n_rel
                 n_rel += 1
+        # Create a reverse mapping from relation ID to relation name
+        self.id2relation = {v: k for k, v in self.relation2id.items()}
 
         self.n_ent = n_ent
         self.n_rel = n_rel
+
+        if embedding_file:
+            self.load_pretrained_embeddings(embedding_file)  # Load embeddings
 
         self.filters = defaultdict(lambda:set())
 
@@ -54,6 +60,25 @@ class DataLoader:
             self.filters[filt] = list(self.filters[filt])
 
         print('n_train:', self.n_train, 'n_valid:', self.n_valid, 'n_test:', self.n_test)
+
+    def load_pretrained_embeddings(self, embedding_file, embedding_dim=48):
+        """Load pre-trained embeddings from a file."""
+        self.entity_embeddings = np.zeros(
+            (self.n_ent, embedding_dim))  # embedding_dim should match your pretrained size
+        with open(os.path.join('transductive/data/graph_embedding/', embedding_file)) as f:
+        # with open(embedding_file, 'r') as f:
+            for line in f:
+                parts = line.strip().split()
+                entity = parts[0]
+                embedding = np.array([float(x) for x in parts[1:]])
+
+                if len(embedding) != embedding_dim:
+                    print(f"Warning: Embedding for {entity} has incorrect dimension.")
+                    continue  # Skip embeddings that don't match the required dimension
+
+                if entity in self.entity2id:
+                    idx = self.entity2id[entity]
+                    self.entity_embeddings[idx] = embedding
 
     def read_triples(self, filename):
         triples = []
