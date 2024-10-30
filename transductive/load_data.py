@@ -65,7 +65,7 @@ class DataLoader:
         """Load pre-trained embeddings from a file."""
         self.entity_embeddings = np.zeros(
             (self.n_ent, embedding_dim))  # embedding_dim should match your pretrained size
-        with open(os.path.join('transductive/data/graph_embedding/', embedding_file)) as f:
+        with open(os.path.join('data/graph_embedding/', embedding_file)) as f:
         # with open(embedding_file, 'r') as f:
             for line in f:
                 parts = line.strip().split()
@@ -170,7 +170,7 @@ class DataLoader:
         
         subs = query[batch_idx, 0]
         rels = query[batch_idx, 1]
-        objs = np.zeros((len(batch_idx), self.n_ent))
+        objs = np.zeros((len(batch_idx), self.n_ent), dtype=int)
         for i in range(len(batch_idx)):
             objs[i][answer[batch_idx[i]]] = 1
         return subs, rels, objs

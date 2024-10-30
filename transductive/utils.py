@@ -2,6 +2,7 @@ import numpy as np
 from scipy.stats import rankdata
 import subprocess
 import logging
+from sklearn.metrics import roc_auc_score, average_precision_score
 
 def cal_ranks(scores, labels, filters):
     scores = scores - np.min(scores, axis=1, keepdims=True) + 1e-8
@@ -19,6 +20,28 @@ def cal_performance(ranks):
     h_3 = sum(ranks<=3) * 1.0 / len(ranks)
     h_10 = sum(ranks<=10) * 1.0 / len(ranks)
     return mrr, h_1, h_3, h_10
+
+
+def cal_auc_aupr(scores, labels):
+    """
+    Calculate AUC and AUPR given scores, labels
+
+    Args:
+        scores (list or ndarray): 包含正样本和负样本的得分。
+        labels (list or ndarray): 正样本标签为 1，负样本标签为 0。
+
+    Returns:
+        auc (float): AUC score for the batch.
+        aupr (float): AUPR score for the batch.
+    """
+
+    auc = roc_auc_score(labels, scores)
+    aupr = average_precision_score(labels, scores)
+
+    return auc, aupr
+
+
+
 
 
 def select_gpu():

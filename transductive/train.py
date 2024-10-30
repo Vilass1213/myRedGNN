@@ -7,7 +7,7 @@ from base_model import BaseModel
 from utils import select_gpu
 
 parser = argparse.ArgumentParser(description="Parser for RED-GNN")
-parser.add_argument('--data_path', type=str, default='transductive/data/onlydrds/')
+parser.add_argument('--data_path', type=str, default='data/onlydrds/')
 parser.add_argument('--seed', type=str, default=1234)
 
 
@@ -38,8 +38,9 @@ if __name__ == '__main__':
     torch.cuda.set_device("cuda:0")
     # print('gpu:', gpu)
 
-    # loader = DataLoader(args.data_path)
-    loader = DataLoader(args.data_path, embedding_file='deepwalk_drds_embeddings1.txt')  #use deepwalk embeddings
+    loader = DataLoader(args.data_path)
+    # loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
+    # loader = DataLoader(args.data_path, embedding_file='deepwalk_drds_embeddings1.txt')
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
@@ -87,18 +88,18 @@ if __name__ == '__main__':
         opts.act = 'relu'
         opts.n_batch = 5
         opts.n_tbatch = 1
-    elif dataset == 'primekg':
+    elif dataset == 'primekg1' or dataset == 'top10_primekg1':
         opts.lr = 0.001
         opts.decay_rate = 0.9938
         opts.lamb = 0.000080
         opts.hidden_dim = 48
         opts.attn_dim = 5
-        opts.n_layer = 4
+        opts.n_layer = 3
         opts.dropout = 0.04
         opts.act = 'relu'
-        opts.n_batch = 10
-        opts.n_tbatch = 5
-    elif dataset == 'onlydrds':
+        opts.n_batch = 5
+        opts.n_tbatch = 1
+    elif dataset == 'onlydrds' or dataset == 'top10_onlydrds':
         opts.lr = 0.0036
         opts.decay_rate = 0.999
         opts.lamb = 0.000017
@@ -120,8 +121,10 @@ if __name__ == '__main__':
 
     # best_mrr = 0
     best_mrr_per_relation = {'indication': 0, 'contraindication': 0}
+    best_str_per_relation = {'indication': '', 'contraindication': ''}
+
     for epoch in range(50):
-        # print('Epoch:', epoch)
+        print('Epoch:', epoch)
         mrr_per_relation, out_str = model.train_batch()
         with open(opts.perf_file, 'a+') as f:
             f.write(out_str)
@@ -133,10 +136,11 @@ if __name__ == '__main__':
         for rel, mrr in mrr_per_relation.items():
             if mrr > best_mrr_per_relation[rel]:
                 best_mrr_per_relation[rel] = mrr
-                best_str = out_str
-                print(f'{epoch}\t[Best {rel}] ' + best_str)
+                best_str_per_relation[rel] = out_str
+                print(f'{epoch}\t[Best {rel}] ' + best_str_per_relation[rel])  # best metrics for each relation
     # print(best_str)
     print("Final Best Results:")
     for rel, best_mrr in best_mrr_per_relation.items():
         print(f'Best MRR for {rel}: {best_mrr:.4f}')
+        print(f'Best metrics for {rel}: {best_str_per_relation[rel]}')
 

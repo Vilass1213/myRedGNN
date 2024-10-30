@@ -1,0 +1,4 @@
+contraindication
+indication
+synergistic-interaction
+parent-child
