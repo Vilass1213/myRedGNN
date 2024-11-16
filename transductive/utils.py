@@ -23,18 +23,6 @@ def cal_performance(ranks):
 
 
 def cal_auc_aupr(scores, labels):
-    """
-    Calculate AUC and AUPR given scores, labels
-
-    Args:
-        scores (list or ndarray): 包含正样本和负样本的得分。
-        labels (list or ndarray): 正样本标签为 1，负样本标签为 0。
-
-    Returns:
-        auc (float): AUC score for the batch.
-        aupr (float): AUPR score for the batch.
-    """
-
     auc = roc_auc_score(labels, scores)
     aupr = average_precision_score(labels, scores)
 

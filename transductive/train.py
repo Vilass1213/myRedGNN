@@ -38,57 +38,14 @@ if __name__ == '__main__':
     torch.cuda.set_device("cuda:0")
     # print('gpu:', gpu)
 
-    loader = DataLoader(args.data_path)
-    # loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
+    # loader = DataLoader(args.data_path)
+    # loader = DataLoader(args. data_path, embedding_file='transe_rmtop10_drds_embeddings.txt')  #use pretrained embeddings
+    loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
     # loader = DataLoader(args.data_path, embedding_file='deepwalk_drds_embeddings1.txt')
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
-    if dataset == 'family':
-        opts.lr = 0.0036
-        opts.decay_rate = 0.999
-        opts.lamb = 0.000017
-        opts.hidden_dim = 48
-        opts.attn_dim = 5
-        opts.n_layer = 3
-        opts.dropout = 0.29
-        opts.act = 'relu'
-        opts.n_batch = 20
-        opts.n_tbatch = 50
-    elif dataset == 'umls':
-        opts.lr = 0.0012
-        opts.decay_rate = 0.998
-        opts.lamb = 0.00014
-        opts.hidden_dim = 64
-        opts.attn_dim = 5
-        opts.n_layer = 5
-        opts.dropout = 0.01
-        opts.act = 'tanh'
-        opts.n_batch = 10
-        opts.n_tbatch = 50
-    elif dataset == 'WN18RR':
-        opts.lr = 0.0003
-        opts.decay_rate = 0.994
-        opts.lamb = 0.00014
-        opts.hidden_dim = 64
-        opts.attn_dim = 5
-        opts.n_layer = 5
-        opts.dropout = 0.02
-        opts.act = 'idd'
-        opts.n_batch = 50
-        opts.n_tbatch = 50
-    elif dataset == 'fb15k-237':
-        opts.lr = 0.0009
-        opts.decay_rate = 0.9938
-        opts.lamb = 0.000080
-        opts.hidden_dim = 48
-        opts.attn_dim = 5
-        opts.n_layer = 4
-        opts.dropout = 0.0391
-        opts.act = 'relu'
-        opts.n_batch = 5
-        opts.n_tbatch = 1
-    elif dataset == 'primekg1' or dataset == 'top10_primekg1':
+    if dataset == 'primekg1' or dataset == 'top10_primekg1':
         opts.lr = 0.001
         opts.decay_rate = 0.9938
         opts.lamb = 0.000080

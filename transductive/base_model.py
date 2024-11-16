@@ -66,7 +66,7 @@ class BaseModel(object):
             loss.backward()
             self.optimizer.step()
 
-            #  indication
+            # # indication
             # if len(indication_triples) > 0:
             #     scores_indication = self.model(indication_triples[:, 0], indication_triples[:, 1])
             #     pos_scores_indication = scores_indication[
@@ -117,9 +117,12 @@ class BaseModel(object):
         return valid_per_mrr, out_str
 
     def evaluate(self, ):
+        global scores, objs, rels
         batch_size = self.n_tbatch
         relations_to_evaluate = ['contraindication', 'indication']  # 目标关系
         metrics_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的评估结果
+        scores_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的得分
+        objs_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的目标实体
 
         n_data = self.n_valid
         n_batch = n_data // batch_size + (n_data % batch_size > 0)
@@ -150,10 +153,19 @@ class BaseModel(object):
                     if rel_name in metrics_per_relation:
                         metrics_per_relation[rel_name].append(rank)
 
+            # Categorize scores&objs by relation
+            for rel, score, obj in zip(rels, scores, objs):
+                if rel in self.loader.id2relation:
+                    rel_name = self.loader.id2relation[rel]
+                    if rel_name in scores_per_relation:
+                        scores_per_relation[rel_name].append(score)
+                        objs_per_relation[rel_name].append(obj)
+
         v_mrr_per_relation = {}# Calculate metrics for each relation
         v_auc_per_relation = {}
         v_aupr_per_relation = {}
         out_str = ''
+
         for rel_name, ranks in metrics_per_relation.items():
             if ranks:
                 ranking = np.array(ranks)
@@ -161,16 +173,21 @@ class BaseModel(object):
                 v_mrr_per_relation[rel_name] = v_mrr
                 out_str += f'[VALID - {rel_name}] MRR: {v_mrr:.4f}, H@1: {v_h1:.4f}, H@3: {v_h3:.4f}, H@10: {v_h10:.4f}\n'
                 # calculate AUC and AUPR
-                scores_flat = scores.flatten()
-                objs_flat = objs.flatten()
-                v_auc, v_aupr = cal_auc_aupr(scores_flat, objs_flat)
-                v_auc_per_relation[rel_name] = v_auc
-                v_aupr_per_relation[rel_name] = v_aupr
-                out_str += f'[VALID - {rel_name}] AUC: {v_auc:.4f}, AUPR: {v_aupr:.4f}\n'
+                rel_scores = np.array(scores_per_relation[rel_name])
+                rel_objs = np.array(objs_per_relation[rel_name])
+
+                # 确保数组不为空
+                if rel_scores.size > 0 and rel_objs.size > 0:
+                    v_auc, v_aupr = cal_auc_aupr(rel_scores.flatten(), rel_objs.flatten())
+                    v_auc_per_relation[rel_name] = v_auc
+                    v_aupr_per_relation[rel_name] = v_aupr
+                    out_str += f'[VALID - {rel_name}] AUC: {v_auc:.4f}, AUPR: {v_aupr:.4f}\n'
 
         n_data = self.n_test
         n_batch = n_data // batch_size + (n_data % batch_size > 0)
         metrics_per_relation = {rel: [] for rel in relations_to_evaluate}  # 重置存储
+        scores_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的得分
+        objs_per_relation = {rel: [] for rel in relations_to_evaluate}
         self.model.eval()
 
         for i in range(n_batch):
@@ -196,6 +213,13 @@ class BaseModel(object):
                     if rel_name in metrics_per_relation:
                         metrics_per_relation[rel_name].append(rank)
 
+            for rel, score, obj in zip(rels, scores, objs):
+                if rel in self.loader.id2relation:
+                    rel_name = self.loader.id2relation[rel]
+                    if rel_name in scores_per_relation:
+                        scores_per_relation[rel_name].append(score)
+                        objs_per_relation[rel_name].append(obj)
+
         t_mrr_per_relation = {}
         t_auc_per_relation = {}
         t_aupr_per_relation = {}
@@ -207,12 +231,16 @@ class BaseModel(object):
                 t_mrr_per_relation[rel_name] = t_mrr
                 out_str += f'[TEST - {rel_name}] MRR: {t_mrr:.4f}, H@1: {t_h1:.4f}, H@3: {t_h3:.4f}, H@10: {t_h10:.4f}\n'
 
-                scores_flat = scores.flatten()
-                objs_flat = objs.flatten()
-                t_auc, t_aupr = cal_auc_aupr(scores_flat, objs_flat)
-                t_auc_per_relation[rel_name] = t_auc
-                t_aupr_per_relation[rel_name] = t_aupr
-                out_str += f'[TEST - {rel_name}] AUC: {t_auc:.4f}, AUPR: {t_aupr:.4f}\n'
+                # calculate AUC and AUPR
+                rel_scores = np.array(scores_per_relation[rel_name])
+                rel_objs = np.array(objs_per_relation[rel_name])
+
+                # 确保数组不为空
+                if rel_scores.size > 0 and rel_objs.size > 0:
+                    t_auc, t_aupr = cal_auc_aupr(rel_scores.flatten(), rel_objs.flatten())
+                    t_auc_per_relation[rel_name] = t_auc
+                    t_aupr_per_relation[rel_name] = t_aupr
+                    out_str += f'[TEST - {rel_name}] AUC: {t_auc:.4f}, AUPR: {t_aupr:.4f}\n'
 
 
         i_time = time.time() - i_time
