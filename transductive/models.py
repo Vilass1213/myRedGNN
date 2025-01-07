@@ -36,6 +36,7 @@ class GNNLayer(torch.nn.Module):
 
         message = hs + hr
         alpha = torch.sigmoid(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr) + self.Wqr_attn(h_qr))))  # attention
+        # alpha = torch.sigmoid(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr)))) #ablation study remove h_qr
         # 替换为 softmax
         # alpha = torch.softmax(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr) + self.Wqr_attn(h_qr))), dim=1)
 

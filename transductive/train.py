@@ -4,7 +4,7 @@ import torch
 import numpy as np
 from load_data import DataLoader
 from base_model import BaseModel
-from utils import select_gpu
+
 
 parser = argparse.ArgumentParser(description="Parser for RED-GNN")
 parser.add_argument('--data_path', type=str, default='data/onlydrds/')
@@ -38,14 +38,12 @@ if __name__ == '__main__':
     torch.cuda.set_device("cuda:0")
     # print('gpu:', gpu)
 
-    # loader = DataLoader(args.data_path)
-    # loader = DataLoader(args. data_path, embedding_file='transe_rmtop10_drds_embeddings.txt')  #use pretrained embeddings
+    # loader = DataLoader(args.data_path, embedding_file=None)
     loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
-    # loader = DataLoader(args.data_path, embedding_file='deepwalk_drds_embeddings1.txt')
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
-    if dataset == 'primekg1' or dataset == 'top10_primekg1':
+    if dataset == 'primekg1':
         opts.lr = 0.001
         opts.decay_rate = 0.9938
         opts.lamb = 0.000080
@@ -56,16 +54,16 @@ if __name__ == '__main__':
         opts.act = 'relu'
         opts.n_batch = 5
         opts.n_tbatch = 1
-    elif dataset == 'onlydrds' or dataset == 'top10_onlydrds':
+    elif dataset == 'onlydrds' or  dataset == 'onlydrds_1' or dataset == 'onlydrds_2' or dataset == 'onlydrds_3' or dataset == 'onlydrds_4':
         opts.lr = 0.0036
         opts.decay_rate = 0.999
         opts.lamb = 0.000017
         opts.hidden_dim = 48
         opts.attn_dim = 5
-        opts.n_layer = 3
+        opts.n_layer = 6
         opts.dropout = 0.29
         opts.act = 'relu'
-        opts.n_batch = 20
+        opts.n_batch = 60
         opts.n_tbatch = 50
 
 

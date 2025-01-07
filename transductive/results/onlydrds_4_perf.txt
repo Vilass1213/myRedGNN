@@ -1,0 +1,510 @@
+0.0036, 0.9990, 0.000017,  48, 5, 6, 40, 0.2900,relu
+[VALID - contraindication] MRR: 0.1582, H@1: 0.1379, H@3: 0.1751, H@10: 0.1882
+[VALID - contraindication] AUC: 0.7548, AUPR: 0.0019
+[VALID - indication] MRR: 0.1465, H@1: 0.1273, H@3: 0.1575, H@10: 0.1742
+[VALID - indication] AUC: 0.3964, AUPR: 0.0003
+[TEST - contraindication] MRR: 0.1088, H@1: 0.0892, H@3: 0.1200, H@10: 0.1366
+[TEST - contraindication] AUC: 0.7540, AUPR: 0.0019
+[TEST - indication] MRR: 0.1598, H@1: 0.1418, H@3: 0.1688, H@10: 0.1831
+[TEST - indication] AUC: 0.3907, AUPR: 0.0003
+[TIME] train: 338.0554, inference: 108.8846
+[VALID - contraindication] MRR: 0.3514, H@1: 0.2571, H@3: 0.3950, H@10: 0.5317
+[VALID - contraindication] AUC: 0.9671, AUPR: 0.1001
+[VALID - indication] MRR: 0.3487, H@1: 0.2546, H@3: 0.3836, H@10: 0.5260
+[VALID - indication] AUC: 0.9650, AUPR: 0.1240
+[TEST - contraindication] MRR: 0.2967, H@1: 0.1993, H@3: 0.3447, H@10: 0.4824
+[TEST - contraindication] AUC: 0.9670, AUPR: 0.0985
+[TEST - indication] MRR: 0.3605, H@1: 0.2693, H@3: 0.4039, H@10: 0.5458
+[TEST - indication] AUC: 0.9551, AUPR: 0.1404
+[TIME] train: 673.0544, inference: 107.5725
+[VALID - contraindication] MRR: 0.6436, H@1: 0.5580, H@3: 0.6860, H@10: 0.8206
+[VALID - contraindication] AUC: 0.9889, AUPR: 0.2897
+[VALID - indication] MRR: 0.6252, H@1: 0.5410, H@3: 0.6750, H@10: 0.7806
+[VALID - indication] AUC: 0.9678, AUPR: 0.2438
+[TEST - contraindication] MRR: 0.6185, H@1: 0.5253, H@3: 0.6652, H@10: 0.8029
+[TEST - contraindication] AUC: 0.9882, AUPR: 0.3019
+[TEST - indication] MRR: 0.6301, H@1: 0.5440, H@3: 0.6786, H@10: 0.7899
+[TEST - indication] AUC: 0.9616, AUPR: 0.2583
+[TIME] train: 994.3305, inference: 107.8692
+[VALID - contraindication] MRR: 0.6056, H@1: 0.5142, H@3: 0.6477, H@10: 0.7954
+[VALID - contraindication] AUC: 0.9901, AUPR: 0.2516
+[VALID - indication] MRR: 0.5953, H@1: 0.5193, H@3: 0.6281, H@10: 0.7655
+[VALID - indication] AUC: 0.9779, AUPR: 0.1494
+[TEST - contraindication] MRR: 0.5733, H@1: 0.4659, H@3: 0.6311, H@10: 0.7896
+[TEST - contraindication] AUC: 0.9891, AUPR: 0.2622
+[TEST - indication] MRR: 0.5763, H@1: 0.4776, H@3: 0.6355, H@10: 0.7684
+[TEST - indication] AUC: 0.9698, AUPR: 0.1492
+[TIME] train: 1326.2737, inference: 108.0688
+[VALID - contraindication] MRR: 0.6360, H@1: 0.5514, H@3: 0.6816, H@10: 0.8162
+[VALID - contraindication] AUC: 0.9889, AUPR: 0.2400
+[VALID - indication] MRR: 0.6203, H@1: 0.5444, H@3: 0.6533, H@10: 0.7722
+[VALID - indication] AUC: 0.9702, AUPR: 0.3039
+[TEST - contraindication] MRR: 0.6140, H@1: 0.5231, H@3: 0.6531, H@10: 0.7919
+[TEST - contraindication] AUC: 0.9881, AUPR: 0.2504
+[TEST - indication] MRR: 0.6256, H@1: 0.5458, H@3: 0.6553, H@10: 0.7917
+[TEST - indication] AUC: 0.9642, AUPR: 0.3385
+[TIME] train: 1664.7472, inference: 109.3698
+[VALID - contraindication] MRR: 0.5692, H@1: 0.4705, H@3: 0.5952, H@10: 0.8140
+[VALID - contraindication] AUC: 0.9915, AUPR: 0.1987
+[VALID - indication] MRR: 0.5835, H@1: 0.5042, H@3: 0.6064, H@10: 0.7605
+[VALID - indication] AUC: 0.9799, AUPR: 0.2511
+[TEST - contraindication] MRR: 0.5503, H@1: 0.4438, H@3: 0.5925, H@10: 0.7819
+[TEST - contraindication] AUC: 0.9904, AUPR: 0.2024
+[TEST - indication] MRR: 0.5755, H@1: 0.4811, H@3: 0.6284, H@10: 0.7846
+[TEST - indication] AUC: 0.9739, AUPR: 0.2841
+[TIME] train: 1998.4870, inference: 109.1888
+0.0036, 0.9990, 0.000017,  48, 5, 6, 40, 0.2900,relu
+
+
+2024/12/03/14:20
+0.0036, 0.9990, 0.000017,  48, 5, 6, 40, 0.2900,relu
+[VALID - contraindication] MRR: 0.1818, H@1: 0.1258, H@3: 0.1827, H@10: 0.2812
+[VALID - contraindication] AUC: 0.9365, AUPR: 0.0273
+[VALID - indication] MRR: 0.2126, H@1: 0.1558, H@3: 0.2211, H@10: 0.3166
+[VALID - indication] AUC: 0.9046, AUPR: 0.0421
+[TEST - contraindication] MRR: 0.1579, H@1: 0.1090, H@3: 0.1597, H@10: 0.2280
+[TEST - contraindication] AUC: 0.9357, AUPR: 0.0267
+[TEST - indication] MRR: 0.2334, H@1: 0.1741, H@3: 0.2370, H@10: 0.3393
+[TEST - indication] AUC: 0.8921, AUPR: 0.0486
+[TIME] train: 325.6196, inference: 109.3437
+[VALID - contraindication] MRR: 0.5688, H@1: 0.4705, H@3: 0.6214, H@10: 0.7593
+[VALID - contraindication] AUC: 0.9886, AUPR: 0.2077
+[VALID - indication] MRR: 0.5448, H@1: 0.4590, H@3: 0.5779, H@10: 0.7085
+[VALID - indication] AUC: 0.9643, AUPR: 0.1749
+[TEST - contraindication] MRR: 0.5407, H@1: 0.4361, H@3: 0.5881, H@10: 0.7401
+[TEST - contraindication] AUC: 0.9870, AUPR: 0.2059
+[TEST - indication] MRR: 0.5903, H@1: 0.5027, H@3: 0.6248, H@10: 0.7648
+[TEST - indication] AUC: 0.9535, AUPR: 0.1886
+[TIME] train: 641.1325, inference: 108.8394
+[VALID - contraindication] MRR: 0.5403, H@1: 0.4562, H@3: 0.5656, H@10: 0.7144
+[VALID - contraindication] AUC: 0.9900, AUPR: 0.2296
+[VALID - indication] MRR: 0.5203, H@1: 0.4523, H@3: 0.5444, H@10: 0.6600
+[VALID - indication] AUC: 0.9728, AUPR: 0.3104
+[TEST - contraindication] MRR: 0.5189, H@1: 0.4394, H@3: 0.5374, H@10: 0.6839
+[TEST - contraindication] AUC: 0.9889, AUPR: 0.2169
+[TEST - indication] MRR: 0.5598, H@1: 0.4865, H@3: 0.5871, H@10: 0.7127
+[TEST - indication] AUC: 0.9652, AUPR: 0.3394
+[TIME] train: 975.8696, inference: 108.1646
+[VALID - contraindication] MRR: 0.5567, H@1: 0.4606, H@3: 0.5996, H@10: 0.7527
+[VALID - contraindication] AUC: 0.9885, AUPR: 0.2067
+[VALID - indication] MRR: 0.5561, H@1: 0.4707, H@3: 0.5930, H@10: 0.7454
+[VALID - indication] AUC: 0.9751, AUPR: 0.2246
+[TEST - contraindication] MRR: 0.5366, H@1: 0.4350, H@3: 0.5749, H@10: 0.7522
+[TEST - contraindication] AUC: 0.9873, AUPR: 0.2069
+[TEST - indication] MRR: 0.5802, H@1: 0.4937, H@3: 0.6248, H@10: 0.7666
+[TEST - indication] AUC: 0.9653, AUPR: 0.2441
+[TIME] train: 1312.0104, inference: 109.1847
+[VALID - contraindication] MRR: 0.6703, H@1: 0.5886, H@3: 0.7090, H@10: 0.8425
+[VALID - contraindication] AUC: 0.9911, AUPR: 0.2721
+[VALID - indication] MRR: 0.6604, H@1: 0.5946, H@3: 0.6901, H@10: 0.7973
+[VALID - indication] AUC: 0.9758, AUPR: 0.2190
+[TEST - contraindication] MRR: 0.6839, H@1: 0.5991, H@3: 0.7368, H@10: 0.8370
+[TEST - contraindication] AUC: 0.9899, AUPR: 0.2805
+[TEST - indication] MRR: 0.6589, H@1: 0.5745, H@3: 0.6930, H@10: 0.8115
+[TEST - indication] AUC: 0.9692, AUPR: 0.2315
+[TIME] train: 1635.4185, inference: 107.2278
+[VALID - contraindication] MRR: 0.6545, H@1: 0.5711, H@3: 0.6926, H@10: 0.8249
+[VALID - contraindication] AUC: 0.9919, AUPR: 0.2586
+[VALID - indication] MRR: 0.6500, H@1: 0.5829, H@3: 0.6817, H@10: 0.7822
+[VALID - indication] AUC: 0.9741, AUPR: 0.1865
+[TEST - contraindication] MRR: 0.6674, H@1: 0.5892, H@3: 0.7048, H@10: 0.8172
+[TEST - contraindication] AUC: 0.9908, AUPR: 0.2561
+[TEST - indication] MRR: 0.6590, H@1: 0.5889, H@3: 0.6822, H@10: 0.7989
+[TEST - indication] AUC: 0.9660, AUPR: 0.1848
+[TIME] train: 1963.0988, inference: 107.4193
+[VALID - contraindication] MRR: 0.5985, H@1: 0.5033, H@3: 0.6444, H@10: 0.8206
+[VALID - contraindication] AUC: 0.9921, AUPR: 0.2378
+[VALID - indication] MRR: 0.6084, H@1: 0.5276, H@3: 0.6533, H@10: 0.7705
+[VALID - indication] AUC: 0.9783, AUPR: 0.2546
+[TEST - contraindication] MRR: 0.6150, H@1: 0.5264, H@3: 0.6575, H@10: 0.7974
+[TEST - contraindication] AUC: 0.9914, AUPR: 0.2411
+[TEST - indication] MRR: 0.6219, H@1: 0.5296, H@3: 0.6822, H@10: 0.7953
+[TEST - indication] AUC: 0.9695, AUPR: 0.2451
+[TIME] train: 2285.2713, inference: 108.0545
+[VALID - contraindication] MRR: 0.5884, H@1: 0.4945, H@3: 0.6346, H@10: 0.7899
+[VALID - contraindication] AUC: 0.9930, AUPR: 0.2372
+[VALID - indication] MRR: 0.6037, H@1: 0.5276, H@3: 0.6365, H@10: 0.7722
+[VALID - indication] AUC: 0.9789, AUPR: 0.3219
+[TEST - contraindication] MRR: 0.5916, H@1: 0.4978, H@3: 0.6399, H@10: 0.7874
+[TEST - contraindication] AUC: 0.9922, AUPR: 0.2396
+[TEST - indication] MRR: 0.6137, H@1: 0.5350, H@3: 0.6427, H@10: 0.7810
+[TEST - indication] AUC: 0.9696, AUPR: 0.3108
+[TIME] train: 2620.7411, inference: 107.1061
+[VALID - contraindication] MRR: 0.6249, H@1: 0.5306, H@3: 0.6882, H@10: 0.8381
+[VALID - contraindication] AUC: 0.9931, AUPR: 0.2868
+[VALID - indication] MRR: 0.6244, H@1: 0.5444, H@3: 0.6650, H@10: 0.7990
+[VALID - indication] AUC: 0.9789, AUPR: 0.3094
+[TEST - contraindication] MRR: 0.6263, H@1: 0.5341, H@3: 0.6971, H@10: 0.8084
+[TEST - contraindication] AUC: 0.9920, AUPR: 0.2855
+[TEST - indication] MRR: 0.6330, H@1: 0.5386, H@3: 0.6966, H@10: 0.8007
+[TEST - indication] AUC: 0.9728, AUPR: 0.3256
+[TIME] train: 2941.4963, inference: 106.9397
+[VALID - contraindication] MRR: 0.5971, H@1: 0.5098, H@3: 0.6400, H@10: 0.7823
+[VALID - contraindication] AUC: 0.9926, AUPR: 0.2331
+[VALID - indication] MRR: 0.5891, H@1: 0.5159, H@3: 0.6147, H@10: 0.7454
+[VALID - indication] AUC: 0.9756, AUPR: 0.3552
+[TEST - contraindication] MRR: 0.5886, H@1: 0.4989, H@3: 0.6399, H@10: 0.7621
+[TEST - contraindication] AUC: 0.9915, AUPR: 0.2337
+[TEST - indication] MRR: 0.6083, H@1: 0.5189, H@3: 0.6481, H@10: 0.7792
+[TEST - indication] AUC: 0.9679, AUPR: 0.3658
+[TIME] train: 3248.2033, inference: 106.5460
+[VALID - contraindication] MRR: 0.7048, H@1: 0.6291, H@3: 0.7462, H@10: 0.8632
+[VALID - contraindication] AUC: 0.9937, AUPR: 0.3001
+[VALID - indication] MRR: 0.6990, H@1: 0.6415, H@3: 0.7286, H@10: 0.8191
+[VALID - indication] AUC: 0.9726, AUPR: 0.2419
+[TEST - contraindication] MRR: 0.7033, H@1: 0.6233, H@3: 0.7533, H@10: 0.8502
+[TEST - contraindication] AUC: 0.9925, AUPR: 0.3157
+[TEST - indication] MRR: 0.6822, H@1: 0.6032, H@3: 0.7271, H@10: 0.8348
+[TEST - indication] AUC: 0.9659, AUPR: 0.2500
+[TIME] train: 3579.6971, inference: 127.8422
+[VALID - contraindication] MRR: 0.5599, H@1: 0.4716, H@3: 0.5985, H@10: 0.7571
+[VALID - contraindication] AUC: 0.9913, AUPR: 0.2138
+[VALID - indication] MRR: 0.5574, H@1: 0.4740, H@3: 0.5913, H@10: 0.7303
+[VALID - indication] AUC: 0.9773, AUPR: 0.3278
+[TEST - contraindication] MRR: 0.5338, H@1: 0.4405, H@3: 0.5628, H@10: 0.7434
+[TEST - contraindication] AUC: 0.9903, AUPR: 0.2065
+[TEST - indication] MRR: 0.5725, H@1: 0.4829, H@3: 0.6194, H@10: 0.7504
+[TEST - indication] AUC: 0.9705, AUPR: 0.3315
+[TIME] train: 4007.8323, inference: 139.0322
+[VALID - contraindication] MRR: 0.6783, H@1: 0.5963, H@3: 0.7210, H@10: 0.8501
+[VALID - contraindication] AUC: 0.9931, AUPR: 0.2743
+[VALID - indication] MRR: 0.6761, H@1: 0.6080, H@3: 0.7203, H@10: 0.8090
+[VALID - indication] AUC: 0.9742, AUPR: 0.3415
+[TEST - contraindication] MRR: 0.6705, H@1: 0.5848, H@3: 0.7192, H@10: 0.8293
+[TEST - contraindication] AUC: 0.9921, AUPR: 0.2843
+[TEST - indication] MRR: 0.6728, H@1: 0.5978, H@3: 0.7074, H@10: 0.8205
+[TEST - indication] AUC: 0.9688, AUPR: 0.3592
+[TIME] train: 4467.5822, inference: 135.9511
+[VALID - contraindication] MRR: 0.5711, H@1: 0.4770, H@3: 0.6094, H@10: 0.7702
+[VALID - contraindication] AUC: 0.9931, AUPR: 0.2363
+[VALID - indication] MRR: 0.5712, H@1: 0.4908, H@3: 0.6080, H@10: 0.7487
+[VALID - indication] AUC: 0.9734, AUPR: 0.3010
+[TEST - contraindication] MRR: 0.5454, H@1: 0.4515, H@3: 0.5804, H@10: 0.7478
+[TEST - contraindication] AUC: 0.9921, AUPR: 0.2539
+[TEST - indication] MRR: 0.5833, H@1: 0.4901, H@3: 0.6391, H@10: 0.7576
+[TEST - indication] AUC: 0.9665, AUPR: 0.2853
+[TIME] train: 4935.5217, inference: 135.2125
+[VALID - contraindication] MRR: 0.6768, H@1: 0.5985, H@3: 0.7221, H@10: 0.8392
+[VALID - contraindication] AUC: 0.9943, AUPR: 0.2915
+[VALID - indication] MRR: 0.6708, H@1: 0.5980, H@3: 0.7236, H@10: 0.8124
+[VALID - indication] AUC: 0.9802, AUPR: 0.3008
+[TEST - contraindication] MRR: 0.6756, H@1: 0.5903, H@3: 0.7324, H@10: 0.8359
+[TEST - contraindication] AUC: 0.9931, AUPR: 0.2971
+[TEST - indication] MRR: 0.6641, H@1: 0.5799, H@3: 0.7020, H@10: 0.8276
+[TEST - indication] AUC: 0.9759, AUPR: 0.3120
+[TIME] train: 5384.4663, inference: 132.0077
+[VALID - contraindication] MRR: 0.7229, H@1: 0.6477, H@3: 0.7659, H@10: 0.8665
+[VALID - contraindication] AUC: 0.9947, AUPR: 0.3680
+[VALID - indication] MRR: 0.7143, H@1: 0.6633, H@3: 0.7353, H@10: 0.8208
+[VALID - indication] AUC: 0.9804, AUPR: 0.3032
+[TEST - contraindication] MRR: 0.7294, H@1: 0.6564, H@3: 0.7731, H@10: 0.8722
+[TEST - contraindication] AUC: 0.9936, AUPR: 0.3884
+[TEST - indication] MRR: 0.7163, H@1: 0.6481, H@3: 0.7451, H@10: 0.8438
+[TEST - indication] AUC: 0.9751, AUPR: 0.3153
+[TIME] train: 5840.0564, inference: 128.7118
+[VALID - contraindication] MRR: 0.7000, H@1: 0.6225, H@3: 0.7374, H@10: 0.8534
+[VALID - contraindication] AUC: 0.9945, AUPR: 0.3237
+[VALID - indication] MRR: 0.7013, H@1: 0.6399, H@3: 0.7303, H@10: 0.8141
+[VALID - indication] AUC: 0.9775, AUPR: 0.2628
+[TEST - contraindication] MRR: 0.7060, H@1: 0.6256, H@3: 0.7588, H@10: 0.8513
+[TEST - contraindication] AUC: 0.9934, AUPR: 0.3354
+[TEST - indication] MRR: 0.6840, H@1: 0.6050, H@3: 0.7271, H@10: 0.8330
+[TEST - indication] AUC: 0.9718, AUPR: 0.2657
+[TIME] train: 6293.5244, inference: 136.1573
+[VALID - contraindication] MRR: 0.6823, H@1: 0.6039, H@3: 0.7221, H@10: 0.8359
+[VALID - contraindication] AUC: 0.9924, AUPR: 0.3163
+[VALID - indication] MRR: 0.6913, H@1: 0.6348, H@3: 0.7186, H@10: 0.8174
+[VALID - indication] AUC: 0.9740, AUPR: 0.2431
+[TEST - contraindication] MRR: 0.6928, H@1: 0.6123, H@3: 0.7412, H@10: 0.8436
+[TEST - contraindication] AUC: 0.9917, AUPR: 0.3280
+[TEST - indication] MRR: 0.6702, H@1: 0.5889, H@3: 0.7163, H@10: 0.8259
+[TEST - indication] AUC: 0.9694, AUPR: 0.2684
+[TIME] train: 6736.9615, inference: 133.0377
+[VALID - contraindication] MRR: 0.6877, H@1: 0.6105, H@3: 0.7243, H@10: 0.8425
+[VALID - contraindication] AUC: 0.9940, AUPR: 0.3047
+[VALID - indication] MRR: 0.6788, H@1: 0.6164, H@3: 0.7069, H@10: 0.8107
+[VALID - indication] AUC: 0.9740, AUPR: 0.2962
+[TEST - contraindication] MRR: 0.6827, H@1: 0.6068, H@3: 0.7192, H@10: 0.8425
+[TEST - contraindication] AUC: 0.9929, AUPR: 0.3210
+[TEST - indication] MRR: 0.6693, H@1: 0.5853, H@3: 0.7127, H@10: 0.8276
+[TEST - indication] AUC: 0.9664, AUPR: 0.2850
+[TIME] train: 7188.9634, inference: 132.9239
+[VALID - contraindication] MRR: 0.7182, H@1: 0.6422, H@3: 0.7560, H@10: 0.8709
+[VALID - contraindication] AUC: 0.9944, AUPR: 0.3100
+[VALID - indication] MRR: 0.7128, H@1: 0.6566, H@3: 0.7420, H@10: 0.8191
+[VALID - indication] AUC: 0.9813, AUPR: 0.3019
+[TEST - contraindication] MRR: 0.7141, H@1: 0.6355, H@3: 0.7632, H@10: 0.8590
+[TEST - contraindication] AUC: 0.9937, AUPR: 0.3278
+[TEST - indication] MRR: 0.6841, H@1: 0.6032, H@3: 0.7271, H@10: 0.8402
+[TEST - indication] AUC: 0.9756, AUPR: 0.3119
+[TIME] train: 7666.5967, inference: 133.0922
+[VALID - contraindication] MRR: 0.7133, H@1: 0.6411, H@3: 0.7516, H@10: 0.8578
+[VALID - contraindication] AUC: 0.9950, AUPR: 0.3261
+[VALID - indication] MRR: 0.6872, H@1: 0.6265, H@3: 0.7152, H@10: 0.8107
+[VALID - indication] AUC: 0.9744, AUPR: 0.3150
+[TEST - contraindication] MRR: 0.6944, H@1: 0.6101, H@3: 0.7434, H@10: 0.8469
+[TEST - contraindication] AUC: 0.9939, AUPR: 0.3409
+[TEST - indication] MRR: 0.6755, H@1: 0.5907, H@3: 0.7217, H@10: 0.8402
+[TEST - indication] AUC: 0.9697, AUPR: 0.2984
+[TIME] train: 8127.4513, inference: 131.2952
+[VALID - contraindication] MRR: 0.6919, H@1: 0.6061, H@3: 0.7374, H@10: 0.8589
+[VALID - contraindication] AUC: 0.9947, AUPR: 0.3203
+[VALID - indication] MRR: 0.6884, H@1: 0.6248, H@3: 0.7169, H@10: 0.8124
+[VALID - indication] AUC: 0.9822, AUPR: 0.3297
+[TEST - contraindication] MRR: 0.6947, H@1: 0.6068, H@3: 0.7467, H@10: 0.8557
+[TEST - contraindication] AUC: 0.9936, AUPR: 0.3296
+[TEST - indication] MRR: 0.6764, H@1: 0.5943, H@3: 0.7163, H@10: 0.8276
+[TEST - indication] AUC: 0.9764, AUPR: 0.3348
+[TIME] train: 8603.0168, inference: 136.4804
+[VALID - contraindication] MRR: 0.6469, H@1: 0.5613, H@3: 0.6849, H@10: 0.8217
+[VALID - contraindication] AUC: 0.9942, AUPR: 0.2736
+[VALID - indication] MRR: 0.6344, H@1: 0.5645, H@3: 0.6650, H@10: 0.7739
+[VALID - indication] AUC: 0.9813, AUPR: 0.3440
+[TEST - contraindication] MRR: 0.6246, H@1: 0.5275, H@3: 0.6839, H@10: 0.8029
+[TEST - contraindication] AUC: 0.9934, AUPR: 0.2856
+[TEST - indication] MRR: 0.6394, H@1: 0.5601, H@3: 0.6750, H@10: 0.7935
+[TEST - indication] AUC: 0.9753, AUPR: 0.3602
+[TIME] train: 9012.2988, inference: 131.3752
+[VALID - contraindication] MRR: 0.6905, H@1: 0.5996, H@3: 0.7462, H@10: 0.8556
+[VALID - contraindication] AUC: 0.9948, AUPR: 0.3284
+[VALID - indication] MRR: 0.6900, H@1: 0.6164, H@3: 0.7370, H@10: 0.8191
+[VALID - indication] AUC: 0.9805, AUPR: 0.3994
+[TEST - contraindication] MRR: 0.6920, H@1: 0.5991, H@3: 0.7533, H@10: 0.8568
+[TEST - contraindication] AUC: 0.9938, AUPR: 0.3362
+[TEST - indication] MRR: 0.6735, H@1: 0.5799, H@3: 0.7289, H@10: 0.8312
+[TEST - indication] AUC: 0.9742, AUPR: 0.3867
+[TIME] train: 9460.0308, inference: 133.2029
+[VALID - contraindication] MRR: 0.6968, H@1: 0.6193, H@3: 0.7374, H@10: 0.8567
+[VALID - contraindication] AUC: 0.9943, AUPR: 0.2964
+[VALID - indication] MRR: 0.6844, H@1: 0.6164, H@3: 0.7219, H@10: 0.8174
+[VALID - indication] AUC: 0.9811, AUPR: 0.3153
+[TEST - contraindication] MRR: 0.6875, H@1: 0.6068, H@3: 0.7302, H@10: 0.8436
+[TEST - contraindication] AUC: 0.9934, AUPR: 0.3077
+[TEST - indication] MRR: 0.6732, H@1: 0.5871, H@3: 0.7199, H@10: 0.8223
+[TEST - indication] AUC: 0.9751, AUPR: 0.3191
+[TIME] train: 9938.8517, inference: 131.1003
+[VALID - contraindication] MRR: 0.6725, H@1: 0.5886, H@3: 0.7123, H@10: 0.8501
+[VALID - contraindication] AUC: 0.9939, AUPR: 0.2959
+[VALID - indication] MRR: 0.6725, H@1: 0.6131, H@3: 0.6918, H@10: 0.8040
+[VALID - indication] AUC: 0.9785, AUPR: 0.3033
+[TEST - contraindication] MRR: 0.6659, H@1: 0.5837, H@3: 0.6993, H@10: 0.8381
+[TEST - contraindication] AUC: 0.9927, AUPR: 0.2931
+[TEST - indication] MRR: 0.6623, H@1: 0.5835, H@3: 0.6912, H@10: 0.8366
+[TEST - indication] AUC: 0.9714, AUPR: 0.3192
+[TIME] train: 10406.8419, inference: 132.4118
+[VALID - contraindication] MRR: 0.7157, H@1: 0.6389, H@3: 0.7626, H@10: 0.8611
+[VALID - contraindication] AUC: 0.9945, AUPR: 0.3318
+[VALID - indication] MRR: 0.7067, H@1: 0.6499, H@3: 0.7320, H@10: 0.8174
+[VALID - indication] AUC: 0.9789, AUPR: 0.3225
+[TEST - contraindication] MRR: 0.7069, H@1: 0.6222, H@3: 0.7599, H@10: 0.8590
+[TEST - contraindication] AUC: 0.9935, AUPR: 0.3424
+[TEST - indication] MRR: 0.6997, H@1: 0.6122, H@3: 0.7540, H@10: 0.8528
+[TEST - indication] AUC: 0.9731, AUPR: 0.3221
+[TIME] train: 10882.6751, inference: 137.0364
+[VALID - contraindication] MRR: 0.6676, H@1: 0.5777, H@3: 0.7276, H@10: 0.8359
+[VALID - contraindication] AUC: 0.9945, AUPR: 0.3204
+[VALID - indication] MRR: 0.6610, H@1: 0.5930, H@3: 0.6884, H@10: 0.8057
+[VALID - indication] AUC: 0.9800, AUPR: 0.3404
+[TEST - contraindication] MRR: 0.6666, H@1: 0.5903, H@3: 0.7015, H@10: 0.8238
+[TEST - contraindication] AUC: 0.9940, AUPR: 0.3358
+[TEST - indication] MRR: 0.6519, H@1: 0.5709, H@3: 0.6858, H@10: 0.8079
+[TEST - indication] AUC: 0.9727, AUPR: 0.3334
+[TIME] train: 11329.2219, inference: 132.6296
+[VALID - contraindication] MRR: 0.7356, H@1: 0.6674, H@3: 0.7713, H@10: 0.8654
+[VALID - contraindication] AUC: 0.9952, AUPR: 0.3611
+[VALID - indication] MRR: 0.7173, H@1: 0.6566, H@3: 0.7538, H@10: 0.8208
+[VALID - indication] AUC: 0.9771, AUPR: 0.3924
+[TEST - contraindication] MRR: 0.7261, H@1: 0.6520, H@3: 0.7698, H@10: 0.8623
+[TEST - contraindication] AUC: 0.9941, AUPR: 0.3823
+[TEST - indication] MRR: 0.7050, H@1: 0.6230, H@3: 0.7558, H@10: 0.8474
+[TEST - indication] AUC: 0.9714, AUPR: 0.3855
+[TIME] train: 11777.4101, inference: 139.1645
+[VALID - contraindication] MRR: 0.7363, H@1: 0.6663, H@3: 0.7834, H@10: 0.8665
+[VALID - contraindication] AUC: 0.9946, AUPR: 0.3491
+[VALID - indication] MRR: 0.7161, H@1: 0.6600, H@3: 0.7437, H@10: 0.8258
+[VALID - indication] AUC: 0.9813, AUPR: 0.3960
+[TEST - contraindication] MRR: 0.7206, H@1: 0.6421, H@3: 0.7665, H@10: 0.8634
+[TEST - contraindication] AUC: 0.9933, AUPR: 0.3657
+[TEST - indication] MRR: 0.7079, H@1: 0.6284, H@3: 0.7504, H@10: 0.8438
+[TEST - indication] AUC: 0.9775, AUPR: 0.3895
+[TIME] train: 12237.7514, inference: 136.0242
+[VALID - contraindication] MRR: 0.6919, H@1: 0.6018, H@3: 0.7451, H@10: 0.8665
+[VALID - contraindication] AUC: 0.9947, AUPR: 0.3378
+[VALID - indication] MRR: 0.6928, H@1: 0.6298, H@3: 0.7270, H@10: 0.8141
+[VALID - indication] AUC: 0.9767, AUPR: 0.3486
+[TEST - contraindication] MRR: 0.7012, H@1: 0.6178, H@3: 0.7522, H@10: 0.8590
+[TEST - contraindication] AUC: 0.9939, AUPR: 0.3559
+[TEST - indication] MRR: 0.6868, H@1: 0.6014, H@3: 0.7325, H@10: 0.8492
+[TEST - indication] AUC: 0.9700, AUPR: 0.3512
+[TIME] train: 12698.4673, inference: 129.4184
+[VALID - contraindication] MRR: 0.6769, H@1: 0.5799, H@3: 0.7407, H@10: 0.8578
+[VALID - contraindication] AUC: 0.9948, AUPR: 0.3143
+[VALID - indication] MRR: 0.6803, H@1: 0.6080, H@3: 0.7219, H@10: 0.8107
+[VALID - indication] AUC: 0.9831, AUPR: 0.4127
+[TEST - contraindication] MRR: 0.6749, H@1: 0.5782, H@3: 0.7335, H@10: 0.8469
+[TEST - contraindication] AUC: 0.9937, AUPR: 0.3388
+[TEST - indication] MRR: 0.6661, H@1: 0.5745, H@3: 0.7217, H@10: 0.8259
+[TEST - indication] AUC: 0.9779, AUPR: 0.4050
+[TIME] train: 13157.8161, inference: 132.7010
+[VALID - contraindication] MRR: 0.7297, H@1: 0.6554, H@3: 0.7724, H@10: 0.8687
+[VALID - contraindication] AUC: 0.9942, AUPR: 0.3262
+[VALID - indication] MRR: 0.7108, H@1: 0.6516, H@3: 0.7387, H@10: 0.8157
+[VALID - indication] AUC: 0.9776, AUPR: 0.4260
+[TEST - contraindication] MRR: 0.7267, H@1: 0.6564, H@3: 0.7720, H@10: 0.8667
+[TEST - contraindication] AUC: 0.9931, AUPR: 0.3455
+[TEST - indication] MRR: 0.7100, H@1: 0.6302, H@3: 0.7576, H@10: 0.8492
+[TEST - indication] AUC: 0.9730, AUPR: 0.4205
+[TIME] train: 13615.6072, inference: 132.5898
+[VALID - contraindication] MRR: 0.7026, H@1: 0.6247, H@3: 0.7505, H@10: 0.8446
+[VALID - contraindication] AUC: 0.9943, AUPR: 0.3420
+[VALID - indication] MRR: 0.6990, H@1: 0.6315, H@3: 0.7404, H@10: 0.8191
+[VALID - indication] AUC: 0.9747, AUPR: 0.3514
+[TEST - contraindication] MRR: 0.7102, H@1: 0.6333, H@3: 0.7610, H@10: 0.8557
+[TEST - contraindication] AUC: 0.9931, AUPR: 0.3586
+[TEST - indication] MRR: 0.6923, H@1: 0.6086, H@3: 0.7433, H@10: 0.8420
+[TEST - indication] AUC: 0.9688, AUPR: 0.3538
+[TIME] train: 14066.4196, inference: 134.6634
+[VALID - contraindication] MRR: 0.6249, H@1: 0.5328, H@3: 0.6663, H@10: 0.8162
+[VALID - contraindication] AUC: 0.9946, AUPR: 0.2816
+[VALID - indication] MRR: 0.6271, H@1: 0.5528, H@3: 0.6533, H@10: 0.7940
+[VALID - indication] AUC: 0.9820, AUPR: 0.2826
+[TEST - contraindication] MRR: 0.6226, H@1: 0.5264, H@3: 0.6641, H@10: 0.8106
+[TEST - contraindication] AUC: 0.9936, AUPR: 0.3059
+[TEST - indication] MRR: 0.6179, H@1: 0.5260, H@3: 0.6607, H@10: 0.7935
+[TEST - indication] AUC: 0.9770, AUPR: 0.2838
+[TIME] train: 14527.0765, inference: 142.6148
+[VALID - contraindication] MRR: 0.7165, H@1: 0.6389, H@3: 0.7560, H@10: 0.8709
+[VALID - contraindication] AUC: 0.9947, AUPR: 0.3390
+[VALID - indication] MRR: 0.7083, H@1: 0.6549, H@3: 0.7303, H@10: 0.8191
+[VALID - indication] AUC: 0.9784, AUPR: 0.4081
+[TEST - contraindication] MRR: 0.7068, H@1: 0.6267, H@3: 0.7544, H@10: 0.8546
+[TEST - contraindication] AUC: 0.9939, AUPR: 0.3577
+[TEST - indication] MRR: 0.6877, H@1: 0.6104, H@3: 0.7343, H@10: 0.8312
+[TEST - indication] AUC: 0.9754, AUPR: 0.4003
+[TIME] train: 14979.1612, inference: 128.5192
+[VALID - contraindication] MRR: 0.7083, H@1: 0.6324, H@3: 0.7429, H@10: 0.8709
+[VALID - contraindication] AUC: 0.9945, AUPR: 0.3255
+[VALID - indication] MRR: 0.6968, H@1: 0.6348, H@3: 0.7253, H@10: 0.8107
+[VALID - indication] AUC: 0.9786, AUPR: 0.4110
+[TEST - contraindication] MRR: 0.7005, H@1: 0.6167, H@3: 0.7555, H@10: 0.8601
+[TEST - contraindication] AUC: 0.9932, AUPR: 0.3436
+[TEST - indication] MRR: 0.6787, H@1: 0.5978, H@3: 0.7199, H@10: 0.8384
+[TEST - indication] AUC: 0.9747, AUPR: 0.4043
+[TIME] train: 15437.8252, inference: 134.8538
+[VALID - contraindication] MRR: 0.7091, H@1: 0.6302, H@3: 0.7538, H@10: 0.8611
+[VALID - contraindication] AUC: 0.9945, AUPR: 0.3607
+[VALID - indication] MRR: 0.7106, H@1: 0.6466, H@3: 0.7471, H@10: 0.8208
+[VALID - indication] AUC: 0.9803, AUPR: 0.3536
+[TEST - contraindication] MRR: 0.7138, H@1: 0.6377, H@3: 0.7555, H@10: 0.8513
+[TEST - contraindication] AUC: 0.9934, AUPR: 0.3749
+[TEST - indication] MRR: 0.6999, H@1: 0.6212, H@3: 0.7379, H@10: 0.8384
+[TEST - indication] AUC: 0.9766, AUPR: 0.3513
+[TIME] train: 15929.1716, inference: 138.6710
+[VALID - contraindication] MRR: 0.7332, H@1: 0.6619, H@3: 0.7681, H@10: 0.8709
+[VALID - contraindication] AUC: 0.9952, AUPR: 0.3664
+[VALID - indication] MRR: 0.7239, H@1: 0.6700, H@3: 0.7437, H@10: 0.8291
+[VALID - indication] AUC: 0.9824, AUPR: 0.3943
+[TEST - contraindication] MRR: 0.7262, H@1: 0.6509, H@3: 0.7764, H@10: 0.8579
+[TEST - contraindication] AUC: 0.9942, AUPR: 0.3832
+[TEST - indication] MRR: 0.6984, H@1: 0.6140, H@3: 0.7504, H@10: 0.8330
+[TEST - indication] AUC: 0.9778, AUPR: 0.3822
+[TIME] train: 16380.5497, inference: 138.6264
+[VALID - contraindication] MRR: 0.7270, H@1: 0.6586, H@3: 0.7604, H@10: 0.8643
+[VALID - contraindication] AUC: 0.9949, AUPR: 0.3576
+[VALID - indication] MRR: 0.7127, H@1: 0.6600, H@3: 0.7370, H@10: 0.8241
+[VALID - indication] AUC: 0.9831, AUPR: 0.3885
+[TEST - contraindication] MRR: 0.7079, H@1: 0.6355, H@3: 0.7412, H@10: 0.8425
+[TEST - contraindication] AUC: 0.9941, AUPR: 0.3731
+[TEST - indication] MRR: 0.7009, H@1: 0.6230, H@3: 0.7415, H@10: 0.8312
+[TEST - indication] AUC: 0.9774, AUPR: 0.3762
+[TIME] train: 16831.8511, inference: 133.0655
+[VALID - contraindication] MRR: 0.7242, H@1: 0.6521, H@3: 0.7648, H@10: 0.8676
+[VALID - contraindication] AUC: 0.9939, AUPR: 0.3525
+[VALID - indication] MRR: 0.7028, H@1: 0.6449, H@3: 0.7303, H@10: 0.8191
+[VALID - indication] AUC: 0.9803, AUPR: 0.3973
+[TEST - contraindication] MRR: 0.7049, H@1: 0.6278, H@3: 0.7544, H@10: 0.8425
+[TEST - contraindication] AUC: 0.9931, AUPR: 0.3693
+[TEST - indication] MRR: 0.6979, H@1: 0.6230, H@3: 0.7433, H@10: 0.8330
+[TEST - indication] AUC: 0.9783, AUPR: 0.3720
+[TIME] train: 17289.7519, inference: 129.5412
+[VALID - contraindication] MRR: 0.7155, H@1: 0.6444, H@3: 0.7505, H@10: 0.8632
+[VALID - contraindication] AUC: 0.9949, AUPR: 0.3554
+[VALID - indication] MRR: 0.7048, H@1: 0.6415, H@3: 0.7387, H@10: 0.8258
+[VALID - indication] AUC: 0.9754, AUPR: 0.3795
+[TEST - contraindication] MRR: 0.7052, H@1: 0.6256, H@3: 0.7500, H@10: 0.8568
+[TEST - contraindication] AUC: 0.9940, AUPR: 0.3766
+[TEST - indication] MRR: 0.6987, H@1: 0.6212, H@3: 0.7415, H@10: 0.8420
+[TEST - indication] AUC: 0.9699, AUPR: 0.3674
+[TIME] train: 17748.2266, inference: 135.7485
+[VALID - contraindication] MRR: 0.7081, H@1: 0.6324, H@3: 0.7440, H@10: 0.8632
+[VALID - contraindication] AUC: 0.9944, AUPR: 0.3301
+[VALID - indication] MRR: 0.6944, H@1: 0.6231, H@3: 0.7370, H@10: 0.8241
+[VALID - indication] AUC: 0.9800, AUPR: 0.3631
+[TEST - contraindication] MRR: 0.6950, H@1: 0.6156, H@3: 0.7401, H@10: 0.8535
+[TEST - contraindication] AUC: 0.9935, AUPR: 0.3496
+[TEST - indication] MRR: 0.6955, H@1: 0.6158, H@3: 0.7361, H@10: 0.8294
+[TEST - indication] AUC: 0.9763, AUPR: 0.3570
+[TIME] train: 18208.0786, inference: 136.5279
+[VALID - contraindication] MRR: 0.7328, H@1: 0.6619, H@3: 0.7670, H@10: 0.8709
+[VALID - contraindication] AUC: 0.9949, AUPR: 0.3618
+[VALID - indication] MRR: 0.7181, H@1: 0.6566, H@3: 0.7571, H@10: 0.8241
+[VALID - indication] AUC: 0.9774, AUPR: 0.4481
+[TEST - contraindication] MRR: 0.7179, H@1: 0.6388, H@3: 0.7665, H@10: 0.8557
+[TEST - contraindication] AUC: 0.9939, AUPR: 0.3785
+[TEST - indication] MRR: 0.7057, H@1: 0.6266, H@3: 0.7558, H@10: 0.8348
+[TEST - indication] AUC: 0.9745, AUPR: 0.4397
+[TIME] train: 18642.3767, inference: 132.4273
+[VALID - contraindication] MRR: 0.7141, H@1: 0.6389, H@3: 0.7593, H@10: 0.8589
+[VALID - contraindication] AUC: 0.9944, AUPR: 0.3093
+[VALID - indication] MRR: 0.6982, H@1: 0.6382, H@3: 0.7219, H@10: 0.8174
+[VALID - indication] AUC: 0.9818, AUPR: 0.3600
+[TEST - contraindication] MRR: 0.7075, H@1: 0.6300, H@3: 0.7511, H@10: 0.8568
+[TEST - contraindication] AUC: 0.9937, AUPR: 0.3222
+[TEST - indication] MRR: 0.7059, H@1: 0.6355, H@3: 0.7361, H@10: 0.8420
+[TEST - indication] AUC: 0.9774, AUPR: 0.3572
+[TIME] train: 19088.7321, inference: 134.5596
+[VALID - contraindication] MRR: 0.6778, H@1: 0.5919, H@3: 0.7276, H@10: 0.8578
+[VALID - contraindication] AUC: 0.9944, AUPR: 0.3043
+[VALID - indication] MRR: 0.6553, H@1: 0.5779, H@3: 0.6884, H@10: 0.8074
+[VALID - indication] AUC: 0.9834, AUPR: 0.3969
+[TEST - contraindication] MRR: 0.6742, H@1: 0.5958, H@3: 0.7159, H@10: 0.8304
+[TEST - contraindication] AUC: 0.9936, AUPR: 0.3211
+[TEST - indication] MRR: 0.6694, H@1: 0.5871, H@3: 0.7074, H@10: 0.8205
+[TEST - indication] AUC: 0.9797, AUPR: 0.3880
+[TIME] train: 19543.4686, inference: 135.1230
+[VALID - contraindication] MRR: 0.7253, H@1: 0.6510, H@3: 0.7659, H@10: 0.8611
+[VALID - contraindication] AUC: 0.9951, AUPR: 0.3696
+[VALID - indication] MRR: 0.7130, H@1: 0.6499, H@3: 0.7437, H@10: 0.8275
+[VALID - indication] AUC: 0.9823, AUPR: 0.4333
+[TEST - contraindication] MRR: 0.7263, H@1: 0.6531, H@3: 0.7720, H@10: 0.8502
+[TEST - contraindication] AUC: 0.9945, AUPR: 0.3885
+[TEST - indication] MRR: 0.7088, H@1: 0.6338, H@3: 0.7576, H@10: 0.8348
+[TEST - indication] AUC: 0.9765, AUPR: 0.4141
+[TIME] train: 20004.9872, inference: 139.7579
+[VALID - contraindication] MRR: 0.7215, H@1: 0.6433, H@3: 0.7637, H@10: 0.8786
+[VALID - contraindication] AUC: 0.9948, AUPR: 0.3586
+[VALID - indication] MRR: 0.7055, H@1: 0.6365, H@3: 0.7404, H@10: 0.8342
+[VALID - indication] AUC: 0.9796, AUPR: 0.4060
+[TEST - contraindication] MRR: 0.7051, H@1: 0.6211, H@3: 0.7566, H@10: 0.8590
+[TEST - contraindication] AUC: 0.9940, AUPR: 0.3717
+[TEST - indication] MRR: 0.6992, H@1: 0.6212, H@3: 0.7397, H@10: 0.8528
+[TEST - indication] AUC: 0.9741, AUPR: 0.3979
+[TIME] train: 20455.1147, inference: 134.6525
+[VALID - contraindication] MRR: 0.6568, H@1: 0.5700, H@3: 0.7035, H@10: 0.8446
+[VALID - contraindication] AUC: 0.9948, AUPR: 0.3149
+[VALID - indication] MRR: 0.6573, H@1: 0.5796, H@3: 0.7002, H@10: 0.8157
+[VALID - indication] AUC: 0.9786, AUPR: 0.3476
+[TEST - contraindication] MRR: 0.6537, H@1: 0.5617, H@3: 0.7037, H@10: 0.8425
+[TEST - contraindication] AUC: 0.9940, AUPR: 0.3307
+[TEST - indication] MRR: 0.6461, H@1: 0.5637, H@3: 0.6822, H@10: 0.8187
+[TEST - indication] AUC: 0.9723, AUPR: 0.3401
+[TIME] train: 20944.0144, inference: 134.8469
+[VALID - contraindication] MRR: 0.7252, H@1: 0.6499, H@3: 0.7681, H@10: 0.8676
+[VALID - contraindication] AUC: 0.9947, AUPR: 0.3276
+[VALID - indication] MRR: 0.7119, H@1: 0.6516, H@3: 0.7420, H@10: 0.8275
+[VALID - indication] AUC: 0.9810, AUPR: 0.3800
+[TEST - contraindication] MRR: 0.7148, H@1: 0.6377, H@3: 0.7588, H@10: 0.8535
+[TEST - contraindication] AUC: 0.9937, AUPR: 0.3402
+[TEST - indication] MRR: 0.6889, H@1: 0.6068, H@3: 0.7343, H@10: 0.8348
+[TEST - indication] AUC: 0.9749, AUPR: 0.3637
+[TIME] train: 21415.7130, inference: 133.9468

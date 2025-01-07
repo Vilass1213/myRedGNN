@@ -1,0 +1,120 @@
+onlydrds_1 【不编码查询关系到注意力机制】
+Final Best Results:
+Best MRR for indication: 0.6174
+Best metrics for indication: [VALID - contraindication] MRR: 0.6103, H@1: 0.5070, H@3: 0.6652, H@10: 0.8021
+[VALID - contraindication] AUC: 0.9932, AUPR: 0.3131
+[VALID - indication] MRR: 0.6174, H@1: 0.5248, H@3: 0.6733, H@10: 0.7921
+[VALID - indication] AUC: 0.9736, AUPR: 0.1017
+[TEST - contraindication] MRR: 0.5946, H@1: 0.4804, H@3: 0.6734, H@10: 0.8197
+[TEST - contraindication] AUC: 0.9935, AUPR: 0.3177
+[TEST - indication] MRR: 0.6021, H@1: 0.4991, H@3: 0.6567, H@10: 0.8049
+[TEST - indication] AUC: 0.9767, AUPR: 0.1227
+[TIME] train: 19966.8626, inference: 168.4180
+
+Best MRR for contraindication: 0.6103
+Best metrics for contraindication: [VALID - contraindication] MRR: 0.6103, H@1: 0.5070, H@3: 0.6652, H@10: 0.8021
+[VALID - contraindication] AUC: 0.9932, AUPR: 0.3131
+[VALID - indication] MRR: 0.6174, H@1: 0.5248, H@3: 0.6733, H@10: 0.7921
+[VALID - indication] AUC: 0.9736, AUPR: 0.1017
+[TEST - contraindication] MRR: 0.5946, H@1: 0.4804, H@3: 0.6734, H@10: 0.8197
+[TEST - contraindication] AUC: 0.9935, AUPR: 0.3177
+[TEST - indication] MRR: 0.6021, H@1: 0.4991, H@3: 0.6567, H@10: 0.8049
+[TEST - indication] AUC: 0.9767, AUPR: 0.1227
+[TIME] train: 19966.8626, inference: 168.4180
+
+onlydrds_2 【不编码查询关系到注意力机制】
+Final Best Results:
+Best MRR for indication: 0.5969
+Best metrics for indication: [VALID - contraindication] MRR: 0.5921, H@1: 0.4765, H@3: 0.6601, H@10: 0.8208
+[VALID - contraindication] AUC: 0.9920, AUPR: 0.3248
+[VALID - indication] MRR: 0.5969, H@1: 0.4862, H@3: 0.6776, H@10: 0.8103
+[VALID - indication] AUC: 0.9802, AUPR: 0.1203
+[TEST - contraindication] MRR: 0.5786, H@1: 0.4614, H@3: 0.6507, H@10: 0.8030
+[TEST - contraindication] AUC: 0.9926, AUPR: 0.3114
+[TEST - indication] MRR: 0.6054, H@1: 0.4895, H@3: 0.6812, H@10: 0.8101
+[TEST - indication] AUC: 0.9751, AUPR: 0.1022
+[TIME] train: 16319.1298, inference: 164.2438
+
+Best MRR for contraindication: 0.6301
+Best metrics for contraindication: [VALID - contraindication] MRR: 0.6301, H@1: 0.5322, H@3: 0.6842, H@10: 0.8142
+[VALID - contraindication] AUC: 0.9904, AUPR: 0.3183
+[VALID - indication] MRR: 0.5909, H@1: 0.4793, H@3: 0.6638, H@10: 0.8138
+[VALID - indication] AUC: 0.9789, AUPR: 0.0924
+[TEST - contraindication] MRR: 0.6211, H@1: 0.5223, H@3: 0.6757, H@10: 0.8063
+[TEST - contraindication] AUC: 0.9912, AUPR: 0.3155
+[TEST - indication] MRR: 0.6224, H@1: 0.5157, H@3: 0.7003, H@10: 0.8153
+[TEST - indication] AUC: 0.9732, AUPR: 0.0756
+[TIME] train: 18806.8613, inference: 153.8666
+
+onlydrds_3 【不编码查询关系到注意力机制】
+Final Best Results:
+Best MRR for indication: 0.6039
+Best metrics for indication: [VALID - contraindication] MRR: 0.6204, H@1: 0.5382, H@3: 0.6620, H@10: 0.7922
+[VALID - contraindication] AUC: 0.9922, AUPR: 0.3375
+[VALID - indication] MRR: 0.6039, H@1: 0.5095, H@3: 0.6690, H@10: 0.7816
+[VALID - indication] AUC: 0.9713, AUPR: 0.0637
+[TEST - contraindication] MRR: 0.6713, H@1: 0.5816, H@3: 0.7278, H@10: 0.8347
+[TEST - contraindication] AUC: 0.9928, AUPR: 0.3333
+[TEST - indication] MRR: 0.6084, H@1: 0.5107, H@3: 0.6601, H@10: 0.7900
+[TEST - indication] AUC: 0.9701, AUPR: 0.0695
+[TIME] train: 17520.6668, inference: 207.6817
+
+Best MRR for contraindication: 0.6204
+Best metrics for contraindication: [VALID - contraindication] MRR: 0.6204, H@1: 0.5382, H@3: 0.6620, H@10: 0.7922
+[VALID - contraindication] AUC: 0.9922, AUPR: 0.3375
+[VALID - indication] MRR: 0.6039, H@1: 0.5095, H@3: 0.6690, H@10: 0.7816
+[VALID - indication] AUC: 0.9713, AUPR: 0.0637
+[TEST - contraindication] MRR: 0.6713, H@1: 0.5816, H@3: 0.7278, H@10: 0.8347
+[TEST - contraindication] AUC: 0.9928, AUPR: 0.3333
+[TEST - indication] MRR: 0.6084, H@1: 0.5107, H@3: 0.6601, H@10: 0.7900
+[TEST - indication] AUC: 0.9701, AUPR: 0.0695
+[TIME] train: 17520.6668, inference: 207.6817
+
+Final Best Results:
+Best MRR for indication: 0.5937
+Best metrics for indication: [VALID - contraindication] MRR: 0.5966, H@1: 0.5016, H@3: 0.6555, H@10: 0.7815
+[VALID - contraindication] AUC: 0.9907, AUPR: 0.3077
+[VALID - indication] MRR: 0.5937, H@1: 0.4922, H@3: 0.6655, H@10: 0.7851
+[VALID - indication] AUC: 0.9730, AUPR: 0.0902
+[TEST - contraindication] MRR: 0.6658, H@1: 0.5794, H@3: 0.7150, H@10: 0.8347
+[TEST - contraindication] AUC: 0.9920, AUPR: 0.3037
+[TEST - indication] MRR: 0.6007, H@1: 0.5036, H@3: 0.6477, H@10: 0.7811
+[TEST - indication] AUC: 0.9722, AUPR: 0.0928
+[TIME] train: 24496.6502, inference: 147.7652
+
+Best MRR for contraindication: 0.5966
+Best metrics for contraindication: [VALID - contraindication] MRR: 0.5966, H@1: 0.5016, H@3: 0.6555, H@10: 0.7815
+[VALID - contraindication] AUC: 0.9907, AUPR: 0.3077
+[VALID - indication] MRR: 0.5937, H@1: 0.4922, H@3: 0.6655, H@10: 0.7851
+[VALID - indication] AUC: 0.9730, AUPR: 0.0902
+[TEST - contraindication] MRR: 0.6658, H@1: 0.5794, H@3: 0.7150, H@10: 0.8347
+[TEST - contraindication] AUC: 0.9920, AUPR: 0.3037
+[TEST - indication] MRR: 0.6007, H@1: 0.5036, H@3: 0.6477, H@10: 0.7811
+[TEST - indication] AUC: 0.9722, AUPR: 0.0928
+[TIME] train: 24496.6502, inference: 147.7652
+
+
+onlydrds_4 【不编码查询关系到注意力机制】
+Final Best Results:
+Best MRR for indication: 0.5929
+Best metrics for indication: [VALID - contraindication] MRR: 0.6199, H@1: 0.5241, H@3: 0.6674, H@10: 0.8096
+[VALID - contraindication] AUC: 0.9946, AUPR: 0.3028
+[VALID - indication] MRR: 0.5929, H@1: 0.5025, H@3: 0.6332, H@10: 0.7806
+[VALID - indication] AUC: 0.9796, AUPR: 0.0772
+[TEST - contraindication] MRR: 0.6309, H@1: 0.5396, H@3: 0.6861, H@10: 0.7952
+[TEST - contraindication] AUC: 0.9945, AUPR: 0.3145
+[TEST - indication] MRR: 0.5980, H@1: 0.5045, H@3: 0.6338, H@10: 0.7882
+[TEST - indication] AUC: 0.9726, AUPR: 0.0815
+[TIME] train: 20412.5386, inference: 243.8116
+
+Best MRR for contraindication: 0.6277
+Best metrics for contraindication: [VALID - contraindication] MRR: 0.6277, H@1: 0.5230, H@3: 0.6969, H@10: 0.8326
+[VALID - contraindication] AUC: 0.9943, AUPR: 0.3022
+[VALID - indication] MRR: 0.5774, H@1: 0.4740, H@3: 0.6415, H@10: 0.7856
+[VALID - indication] AUC: 0.9768, AUPR: 0.0753
+[TEST - contraindication] MRR: 0.6386, H@1: 0.5419, H@3: 0.7026, H@10: 0.8073
+[TEST - contraindication] AUC: 0.9941, AUPR: 0.3161
+[TEST - indication] MRR: 0.5914, H@1: 0.4901, H@3: 0.6535, H@10: 0.7774
+[TEST - indication] AUC: 0.9696, AUPR: 0.0803
+[TIME] train: 25122.8961, inference: 250.7708
+

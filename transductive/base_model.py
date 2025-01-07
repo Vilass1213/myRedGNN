@@ -58,8 +58,8 @@ class BaseModel(object):
             # contraindication_triples = triple[contraindication_mask]
 
             self.model.zero_grad()
-            scores = self.model(triple[:,0], triple[:,1])
 
+            scores = self.model(triple[:,0], triple[:,1])
             pos_scores = scores[[torch.arange(len(scores)).cuda(),torch.LongTensor(triple[:,2]).cuda()]]
             max_n = torch.max(scores, 1, keepdim=True)[0]
             loss = torch.sum(- pos_scores + max_n + torch.log(torch.sum(torch.exp(scores - max_n),1)))
@@ -119,10 +119,10 @@ class BaseModel(object):
     def evaluate(self, ):
         global scores, objs, rels
         batch_size = self.n_tbatch
-        relations_to_evaluate = ['contraindication', 'indication']  # 目标关系
-        metrics_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的评估结果
-        scores_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的得分
-        objs_per_relation = {rel: [] for rel in relations_to_evaluate}  # 存储每个关系的目标实体
+        relations_to_evaluate = ['contraindication', 'indication']
+        metrics_per_relation = {rel: [] for rel in relations_to_evaluate}
+        scores_per_relation = {rel: [] for rel in relations_to_evaluate}
+        objs_per_relation = {rel: [] for rel in relations_to_evaluate}
 
         n_data = self.n_valid
         n_batch = n_data // batch_size + (n_data % batch_size > 0)
