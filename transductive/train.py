@@ -43,28 +43,17 @@ if __name__ == '__main__':
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
-    if dataset == 'primekg1':
-        opts.lr = 0.001
-        opts.decay_rate = 0.9938
-        opts.lamb = 0.000080
-        opts.hidden_dim = 48
-        opts.attn_dim = 5
-        opts.n_layer = 3
-        opts.dropout = 0.04
-        opts.act = 'relu'
-        opts.n_batch = 5
-        opts.n_tbatch = 1
-    elif dataset == 'onlydrds' or  dataset == 'onlydrds_1' or dataset == 'onlydrds_2' or dataset == 'onlydrds_3' or dataset == 'onlydrds_4':
-        opts.lr = 0.0036
-        opts.decay_rate = 0.999
-        opts.lamb = 0.000017
-        opts.hidden_dim = 48
-        opts.attn_dim = 5
-        opts.n_layer = 6
-        opts.dropout = 0.29
-        opts.act = 'relu'
-        opts.n_batch = 60
-        opts.n_tbatch = 50
+
+    opts.lr = 0.0036
+    opts.decay_rate = 0.999
+    opts.lamb = 0.000017
+    opts.hidden_dim = 48
+    opts.attn_dim = 5
+    opts.n_layer = 6
+    opts.dropout = 0.29
+    opts.act = 'relu'
+    opts.n_batch = 60
+    opts.n_tbatch = 50
 
 
     config_str = '%.4f, %.4f, %.6f,  %d, %d, %d, %d, %.4f,%s\n' % (opts.lr, opts.decay_rate, opts.lamb, opts.hidden_dim, opts.attn_dim, opts.n_layer, opts.n_batch, opts.dropout, opts.act)
