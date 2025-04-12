@@ -4,12 +4,12 @@ import time
 
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ExponentialLR
-from models import RED_GNN_trans
+from models import MRD_GNN
 from utils import *
 
 class BaseModel(object):
     def __init__(self, args, loader):
-        self.model = RED_GNN_trans(args, loader, loader.entity_embeddings)
+        self.model = MRD_GNN(args, loader, loader.entity_embeddings)
 
         self.model.cuda()
 
@@ -29,6 +29,8 @@ class BaseModel(object):
         self.scheduler = ExponentialLR(self.optimizer, args.decay_rate)
         self.smooth = 1e-5
         self.t_time = 0
+
+        self.current_epoch = 0
 
     def train_batch(self,):
         epoch_loss = 0
@@ -247,5 +249,21 @@ class BaseModel(object):
         out_str += f'[TIME] train: {self.t_time:.4f}, inference: {i_time:.4f}\n'
 
         return v_mrr_per_relation, out_str
+
+    def save_model(self, file_path="checkpoint.pth"):
+        checkpoint = {
+            "epoch": self.current_epoch,
+            "model_state_dict": self.model.state_dict(),
+            "optimizer_state_dict": self.optimizer.state_dict()
+        }
+        torch.save(checkpoint, file_path)
+        print(f"Model saved to {file_path}")
+
+    def load_model(self, file_path="checkpoint.pth"):
+        checkpoint = torch.load(file_path)
+        self.current_epoch = checkpoint["epoch"]
+        self.model.load_state_dict(checkpoint["model_state_dict"])
+        self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        print(f"Model loaded from {file_path}, starting from epoch {self.current_epoch}")
 
 

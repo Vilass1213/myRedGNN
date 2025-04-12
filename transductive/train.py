@@ -6,8 +6,8 @@ from load_data import DataLoader
 from base_model import BaseModel
 
 
-parser = argparse.ArgumentParser(description="Parser for RED-GNN")
-parser.add_argument('--data_path', type=str, default='data/onlydrds/')
+parser = argparse.ArgumentParser(description="Parser for MRDGNN")
+parser.add_argument('--data_path', type=str, default='data/onlydrds_5/')
 parser.add_argument('--seed', type=str, default=1234)
 
 
@@ -38,8 +38,8 @@ if __name__ == '__main__':
     torch.cuda.set_device("cuda:0")
     # print('gpu:', gpu)
 
-    # loader = DataLoader(args.data_path, embedding_file=None)
-    loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
+    loader = DataLoader(args.data_path, embedding_file=None)
+    # loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
@@ -63,12 +63,23 @@ if __name__ == '__main__':
 
     model = BaseModel(opts, loader)
 
+    start_epoch = 0
+    checkpoint_path = f"checkpoint_{dataset}_indication.pth"
+    if os.path.exists(checkpoint_path):
+        print(f"Checkpoint detected. Loading from {checkpoint_path}...")
+        model.load_model(checkpoint_path)
+        start_epoch = model.current_epoch + 1
+        print(f"Resuming training from epoch {start_epoch}")
+    else:
+        print("No checkpoint found. Starting training from scratch.")
+
     # best_mrr = 0
     best_mrr_per_relation = {'indication': 0, 'contraindication': 0}
     best_str_per_relation = {'indication': '', 'contraindication': ''}
 
-    for epoch in range(50):
+    for epoch in range(start_epoch, 50):
         print('Epoch:', epoch)
+        model.current_epoch = epoch
         mrr_per_relation, out_str = model.train_batch()
         with open(opts.perf_file, 'a+') as f:
             f.write(out_str)
@@ -82,6 +93,11 @@ if __name__ == '__main__':
                 best_mrr_per_relation[rel] = mrr
                 best_str_per_relation[rel] = out_str
                 print(f'{epoch}\t[Best {rel}] ' + best_str_per_relation[rel])  # best metrics for each relation
+
+                # save best model
+                best_model_path = f"checkpoint_{dataset}_{rel}.pth"
+                model.save_model(best_model_path)
+                print(f"Model saved at {best_model_path} (Best MRR for {rel}: {mrr:.4f})")
     # print(best_str)
     print("Final Best Results:")
     for rel, best_mrr in best_mrr_per_relation.items():

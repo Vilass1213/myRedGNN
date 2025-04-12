@@ -48,9 +48,9 @@ class GNNLayer(torch.nn.Module):
 
         return hidden_new
 
-class RED_GNN_trans(torch.nn.Module):
+class MRD_GNN(torch.nn.Module):
     def __init__(self, params, loader, node_embeddings=None):  # node_embeddings: 预训练的节点嵌入
-        super(RED_GNN_trans, self).__init__()
+        super(MRD_GNN, self).__init__()
         self.n_layer = params.n_layer
         self.hidden_dim = params.hidden_dim
         self.attn_dim = params.attn_dim
