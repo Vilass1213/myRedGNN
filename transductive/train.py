@@ -7,7 +7,7 @@ from base_model import BaseModel
 
 
 parser = argparse.ArgumentParser(description="Parser for MRDGNN")
-parser.add_argument('--data_path', type=str, default='data/onlydrds_5/')
+parser.add_argument('--data_path', type=str, default='data/onlydrds/')
 parser.add_argument('--seed', type=str, default=1234)
 
 
@@ -38,8 +38,8 @@ if __name__ == '__main__':
     torch.cuda.set_device("cuda:0")
     # print('gpu:', gpu)
 
-    loader = DataLoader(args.data_path, embedding_file=None)
-    # loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
+    # loader = DataLoader(args.data_path, embedding_file=None)
+    loader = DataLoader(args.data_path, embedding_file='transe_drds_embeddings.txt')  #use pretrained embeddings
     opts.n_ent = loader.n_ent
     opts.n_rel = loader.n_rel
 
@@ -64,14 +64,14 @@ if __name__ == '__main__':
     model = BaseModel(opts, loader)
 
     start_epoch = 0
-    checkpoint_path = f"checkpoint_{dataset}_indication.pth"
-    if os.path.exists(checkpoint_path):
-        print(f"Checkpoint detected. Loading from {checkpoint_path}...")
-        model.load_model(checkpoint_path)
-        start_epoch = model.current_epoch + 1
-        print(f"Resuming training from epoch {start_epoch}")
-    else:
-        print("No checkpoint found. Starting training from scratch.")
+    # checkpoint_path = f"checkpoint/layer{opts.n_layer}_{dataset}_indication.pth"
+    # if os.path.exists(checkpoint_path):
+    #     print(f"Checkpoint detected. Loading from {checkpoint_path}...")
+    #     model.load_model(checkpoint_path)
+    #     start_epoch = model.current_epoch + 1
+    #     print(f"Resuming training from epoch {start_epoch}")
+    # else:
+    #     print("No checkpoint found. Starting training from scratch.")
 
     # best_mrr = 0
     best_mrr_per_relation = {'indication': 0, 'contraindication': 0}
@@ -95,12 +95,24 @@ if __name__ == '__main__':
                 print(f'{epoch}\t[Best {rel}] ' + best_str_per_relation[rel])  # best metrics for each relation
 
                 # save best model
-                best_model_path = f"checkpoint_{dataset}_{rel}.pth"
+                best_model_path = f"checkpoint/layer{opts.n_layer}_{dataset}_{rel}.pth"
                 model.save_model(best_model_path)
                 print(f"Model saved at {best_model_path} (Best MRR for {rel}: {mrr:.4f})")
     # print(best_str)
-    print("Final Best Results:")
-    for rel, best_mrr in best_mrr_per_relation.items():
-        print(f'Best MRR for {rel}: {best_mrr:.4f}')
-        print(f'Best metrics for {rel}: {best_str_per_relation[rel]}')
+
+    with open('final_best_results.txt', 'a') as f:
+        print(f"Final Best Results in {dataset}_{opts.n_layer}layer\n")
+        f.write(f"Final Best Results in {dataset}_{opts.n_layer}layer\n")  # 写入文件
+
+
+        for rel, best_mrr in best_mrr_per_relation.items():
+            line1 = f'Best MRR for {rel}: {best_mrr:.4f}'
+            line2 = f'Best metrics for {rel}: {best_str_per_relation[rel]}'
+
+            print(line1)
+            print(line2)
+
+            f.write(line1 + '\n')
+            f.write(line2 + '\n')
+
 

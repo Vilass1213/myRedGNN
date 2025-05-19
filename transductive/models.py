@@ -37,7 +37,7 @@ class GNNLayer(torch.nn.Module):
         message = hs + hr
         alpha = torch.sigmoid(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr) + self.Wqr_attn(h_qr))))  # attention
         # alpha = torch.sigmoid(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr)))) #ablation study remove h_qr
-        # 替换为 softmax
+        # replace to softmax
         # alpha = torch.softmax(self.w_alpha(nn.ReLU()(self.Ws_attn(hs) + self.Wr_attn(hr) + self.Wqr_attn(h_qr))), dim=1)
 
         message = alpha * message
@@ -70,7 +70,10 @@ class MRD_GNN(torch.nn.Module):
         for i in range(self.n_layer):
             self.gnn_layers.append(GNNLayer(self.hidden_dim, self.hidden_dim, self.attn_dim, self.n_rel, act=act))
         self.gnn_layers = nn.ModuleList(self.gnn_layers)
-       
+
+        # layer Attention: simple learnable weights
+        self.layer_attn_weights = nn.Parameter(torch.ones(self.n_layer))  # 初始每层权重都是1
+
         self.dropout = nn.Dropout(params.dropout)
         self.W_final = nn.Linear(self.hidden_dim, 1, bias=False)         # get score
         self.gate = nn.GRU(self.hidden_dim, self.hidden_dim)
@@ -80,27 +83,50 @@ class MRD_GNN(torch.nn.Module):
         q_sub = torch.LongTensor(subs).cuda()
         q_rel = torch.LongTensor(rels).cuda()
 
-        # 使用预训练嵌入初始化节点表示
-        if self.node_embeddings is not None:
-            hidden = self.node_embeddings[q_sub].cuda()
-        else:
-            hidden = torch.zeros(n, self.hidden_dim).cuda()  # 如果没有预训练嵌入，则初始化为零
+        all_hidden_states = []
 
-        h0 = torch.zeros((1, n,self.hidden_dim)).cuda()
-        nodes = torch.cat([torch.arange(n).unsqueeze(1).cuda(), q_sub.unsqueeze(1)], 1)
-        # hidden = torch.zeros(n, self.hidden_dim).cuda()
+        for j in range(1, self.n_layer + 1):  # 1到n_layer
+            # 重新初始化：每次从初始sub开始
+            if self.node_embeddings is not None:
+                hidden = self.node_embeddings[q_sub].cuda()
+            else:
+                hidden = torch.zeros(n, self.hidden_dim).cuda()
+
+            h0 = torch.zeros((1, n, self.hidden_dim)).cuda()
+            nodes = torch.cat([torch.arange(n).unsqueeze(1).cuda(), q_sub.unsqueeze(1)], 1)
+
+            for i in range(j):  # 递归到第j跳
+                nodes, edges, old_nodes_new_idx = self.loader.get_neighbors(nodes.data.cpu().numpy(), mode=mode)
+                hidden = self.gnn_layers[i](q_sub, q_rel, hidden, edges, nodes.size(0), old_nodes_new_idx)
+                h0 = torch.zeros(1, nodes.size(0), hidden.size(1)).cuda().index_copy_(1, old_nodes_new_idx, h0)
+                hidden = self.dropout(hidden)
+                hidden, h0 = self.gate(hidden.unsqueeze(0), h0)
+                hidden = hidden.squeeze(0)
+
+            all_hidden_states.append(hidden)  # 保存每个子图最终的hidden
 
 
-        scores_all = []
-        for i in range(self.n_layer):
-            nodes, edges, old_nodes_new_idx = self.loader.get_neighbors(nodes.data.cpu().numpy(), mode=mode)
-            hidden = self.gnn_layers[i](q_sub, q_rel, hidden, edges, nodes.size(0), old_nodes_new_idx)
-            h0 = torch.zeros(1, nodes.size(0), hidden.size(1)).cuda().index_copy_(1, old_nodes_new_idx, h0)
-            hidden = self.dropout(hidden)
-            hidden, h0 = self.gate (hidden.unsqueeze(0), h0)
-            hidden = hidden.squeeze(0)
+        max_nodes = max([hidden.size(0) for hidden in all_hidden_states])  # 找到最大节点数
 
-        scores = self.W_final(hidden).squeeze(-1)
+        # 对每一层的 hidden 状态进行填充
+        padded_hidden_states = []
+        for hidden in all_hidden_states:
+            padding_size = max_nodes - hidden.size(0)  # 计算填充的大小
+            if padding_size > 0:
+                # 填充 hidden 状态
+                padding = torch.zeros(padding_size, hidden.size(1)).cuda()  # 用零填充
+                hidden = torch.cat([hidden, padding], dim=0)
+            padded_hidden_states.append(hidden)
+
+        all_hidden_states_stacked = torch.stack(padded_hidden_states, dim=0)
+        # (n_layer, max_nodes, hidden_dim)
+        layer_attn_scores = torch.softmax(self.layer_attn_weights, dim=0)  # (n_layer,)
+        layer_attn_scores = layer_attn_scores.view(-1, 1, 1)  # (n_layer, 1, 1)
+
+        weighted_hidden = all_hidden_states_stacked * layer_attn_scores  # (n_layer, max_nodes, hidden_dim)
+        final_representation = weighted_hidden.sum(dim=0)  # (max_nodes, hidden_dim)
+
+        scores = self.W_final(final_representation).squeeze(-1)
         scores_all = torch.zeros((n, self.loader.n_ent)).cuda()         # non_visited entities have 0 scores
         scores_all[[nodes[:,0], nodes[:,1]]] = scores
         return scores_all
