@@ -25,7 +25,9 @@ class BaseModel(object):
         self.n_layer = args.n_layer
         self.args = args
 
-        self.optimizer = Adam(self.model.parameters(), lr=args.lr, weight_decay=args.lamb)
+
+        self.optimizer = Adam(self.model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+
         self.scheduler = ExponentialLR(self.optimizer, args.decay_rate)
         self.smooth = 1e-5
         self.t_time = 0
@@ -46,7 +48,11 @@ class BaseModel(object):
         t_time = time.time()
         self.model.train()
 
+        print("n_batch: {}".format(n_batch))
+        #for i in range(2):
         for i in range(n_batch):
+            if i % 100 == 0:
+                print("batch: {}".format(i))
             start = i*batch_size
             end = min(self.loader.n_train, (i+1)*batch_size)
             batch_idx = np.arange(start, end)
@@ -59,14 +65,23 @@ class BaseModel(object):
             # indication_triples = triple[indication_mask]
             # contraindication_triples = triple[contraindication_mask]
 
-            self.model.zero_grad()
+            #self.model.zero_grad()
 
             scores = self.model(triple[:,0], triple[:,1])
             pos_scores = scores[[torch.arange(len(scores)).cuda(),torch.LongTensor(triple[:,2]).cuda()]]
             max_n = torch.max(scores, 1, keepdim=True)[0]
             loss = torch.sum(- pos_scores + max_n + torch.log(torch.sum(torch.exp(scores - max_n),1)))
+
+            lr = adjust_learning_rate(optimizer=self.optimizer, epoch=i, lr=self.args.lr,
+                                      warm_up_step=self.args.warm_up_step,
+                                      max_update_step=self.args.max_batches)
+
+
+            self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()
+
+            logging.info('batch: {}, learning rate: {}'.format(i, lr))
 
             # # indication
             # if len(indication_triples) > 0:
@@ -104,11 +119,15 @@ class BaseModel(object):
             # self.optimizer.step()
 
             # avoid NaN
+            time1 = time.time()
             for p in self.model.parameters():
                 X = p.data.clone()
                 flag = X != X
                 X[flag] = np.random.random()
                 p.data.copy_(X)
+            time2 = time.time()
+            print("time (parameters): {}".format(time2-time1))
+
             epoch_loss += loss.item()
         self.scheduler.step()
         self.t_time += time.time() - t_time
@@ -126,7 +145,7 @@ class BaseModel(object):
         scores_per_relation = {rel: [] for rel in relations_to_evaluate}
         objs_per_relation = {rel: [] for rel in relations_to_evaluate}
 
-        n_data = self.n_valid
+        n_data = self.n_valid # 这为什么要重新赋值？
         n_batch = n_data // batch_size + (n_data % batch_size > 0)
         self.model.eval()
         i_time = time.time()

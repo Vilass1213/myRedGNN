@@ -59,7 +59,8 @@ class MRD_GNN(torch.nn.Module):
 
         # 如果传入了预训练嵌入，则使用它进行初始化
         if node_embeddings is not None:
-            self.node_embeddings = torch.FloatTensor(node_embeddings).cuda()
+            self.node_embeddings = torch.tensor(node_embeddings, dtype=torch.float32).to('cuda', non_blocking=True)
+            #self.node_embeddings = torch.FloatTensor(node_embeddings).cuda()
         else:
             self.node_embeddings = None  # 如果没有传入预训练嵌入
 
@@ -67,7 +68,8 @@ class MRD_GNN(torch.nn.Module):
         act = acts[params.act]
 
         self.gnn_layers = []
-        for i in range(self.n_layer):
+        self.gnn_layers.append(GNNLayer(48, self.hidden_dim, self.attn_dim, self.n_rel, act=act))
+        for i in range(1, self.n_layer):
             self.gnn_layers.append(GNNLayer(self.hidden_dim, self.hidden_dim, self.attn_dim, self.n_rel, act=act))
         self.gnn_layers = nn.ModuleList(self.gnn_layers)
 
